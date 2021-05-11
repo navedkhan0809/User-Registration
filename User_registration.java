@@ -10,21 +10,22 @@ public class User_registration {
 		
 		boolean res;
 		Scanner s = new Scanner(System.in);
+	
+		System.out.println("Enter Email id: ");
+		String email = s.nextLine();
 		
-		System.out.println("Enter last name: ");	
-		String lastname = s.nextLine();
-		
-		String nameRegex = "^[A-Z]{1}[a-z]{2,}$";
+		String nameRegex = "^[A-Za-z]{1,}.[A-Za-z]{0,}@[a-z]{1,}.[a-z]{1,}.[a-z]{0,}$";
 		
 		Pattern p = Pattern.compile(nameRegex);
-	    Matcher m = p.matcher(lastname);
+	    Matcher m = p.matcher(email);
 	    res  = m.find();
 	    
 	    if (!res) {
 	    	System.out.println("Invalid Input");
 	    
-	    }else{
+	    }else {
 	    	System.out.println("Correct input");
 	    }
+		
 	}
 }
