@@ -11,13 +11,13 @@ public class User_registration {
 		boolean res;
 		Scanner s = new Scanner(System.in);
 		
-		System.out.println("Enter Mobile number with country code: ");
-		String number = s.nextLine();
+		System.out.println("Enter password with 8 character and 1 upper-case: ");
+		String pass = s.nextLine();
 		
-		String nameRegex = "^[0-9]{2} [0-9]{10}$";
+		String nameRegex = "^(?=.*[A-Z])(?=.*[a-z]).{8}$";
 		
 		Pattern p = Pattern.compile(nameRegex);
-	    Matcher m = p.matcher(number);
+	    Matcher m = p.matcher(pass);
 	    res  = m.find();
 	    
 	    if (!res) {
