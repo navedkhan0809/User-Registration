@@ -11,20 +11,20 @@ public class User_registration {
 		boolean res;
 		Scanner s = new Scanner(System.in);
 		
-		System.out.println("Enter first name: ");
-		String firstname = s.nextLine();
-			
+		System.out.println("Enter last name: ");	
+		String lastname = s.nextLine();
+		
 		String nameRegex = "^[A-Z]{1}[a-z]{2,}$";
-			
+		
 		Pattern p = Pattern.compile(nameRegex);
-		Matcher m = p.matcher(firstname);
-		res  = m.find();
-		  
-		if (!res) {
-		  	System.out.println("Invalid Input");
-		   
-		}else {
-		   	System.out.println("Correct input");
-		}
+	    Matcher m = p.matcher(lastname);
+	    res  = m.find();
+	    
+	    if (!res) {
+	    	System.out.println("Invalid Input");
+	    
+	    }else{
+	    	System.out.println("Correct input");
+	    }
 	}
 }
