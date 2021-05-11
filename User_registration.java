@@ -10,11 +10,11 @@ public class User_registration {
 		
 		boolean res;
 		Scanner s = new Scanner(System.in);
-	
-		System.out.println("Enter password with 8 character and 1 upper-case and atleast 1 number: ");
+		
+		System.out.println("Enter password with 8 character, atleast 1 upper-case, atleast 1 number,atleast 1 speacial character: ");
 		String pass = s.nextLine();
 		
-		String nameRegex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$";
+		String nameRegex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%&]).{8}$";
 		
 		Pattern p = Pattern.compile(nameRegex);
 	    Matcher m = p.matcher(pass);
@@ -23,9 +23,8 @@ public class User_registration {
 	    if (!res) {
 	    	System.out.println("Invalid Input");
 	    
-	    }else {
+	    }else{
 	    	System.out.println("Correct input");
 	    }
-		
 	}
 }
