@@ -10,14 +10,14 @@ public class User_registration {
 		
 		boolean res;
 		Scanner s = new Scanner(System.in);
-	
-		System.out.println("Enter Email id: ");
-		String email = s.nextLine();
 		
-		String nameRegex = "^[A-Za-z]{1,}.[A-Za-z]{0,}@[a-z]{1,}.[a-z]{1,}.[a-z]{0,}$";
+		System.out.println("Enter Mobile number with country code: ");
+		String number = s.nextLine();
+		
+		String nameRegex = "^[0-9]{2} [0-9]{10}$";
 		
 		Pattern p = Pattern.compile(nameRegex);
-	    Matcher m = p.matcher(email);
+	    Matcher m = p.matcher(number);
 	    res  = m.find();
 	    
 	    if (!res) {
@@ -26,6 +26,5 @@ public class User_registration {
 	    }else {
 	    	System.out.println("Correct input");
 	    }
-		
 	}
 }
